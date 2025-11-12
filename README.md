@@ -38,13 +38,13 @@ This class has no required textbook. We will direct you toward online resources 
 
 ## Possible topics for YOU-lead sessions
 
-They can be anything (within the scope of this course) that you find interesting or useful. They can be a use case of what you have learned from the class or a new tool related to what you have learned. The following are some examples.
+They can be **anything** (within the scope of this course) that you find interesting or useful. They can be a use case of what you have learned from the class or a new tool related to what you have learned. The following are some examples.
 
 **Use cases**: scraping traffic data, creating a dashboard using PowerBI, demonstrating how to use GitHub for teamwork, analyzing survey data with R.
 
 **Methods**: machine learning, agent-based modeling, network analysis, traffic simulation, spatial analysis, regular expressions.
 
-**Packages**: pandas, NumPy, scikit-learn, TensorFlow, PyTorch, matplotlib, seaborn, plotly, folium, shapely, geopandas.
+**Packages**: scikit-learn, TensorFlow, PyTorch, Transformers.
 
 ## Schedule
 
@@ -58,7 +58,7 @@ Week 3 (Oct 29, 2025): Web scraping
 
 Week 4 (Nov 5, 2025): Data wrangling
 
-Week 5 (Nov 12, 2025): Open-source tools, **signing up for YOU-lead**
+Week 5 (Nov 12, 2025): Open-source tools, **signing up for YOU-lead [here](https://docs.google.com/spreadsheets/d/1b7E_YByKNdF-94kkDpLYdOrySi7-9n-Jg2X715zdUkc/edit?usp=sharing)**
 
 Week 6 (Nov 19, 2025): Research design and methodology
 
