@@ -62,25 +62,25 @@ Week 5 (Nov 12, 2025): Open-source tools, **signing up for YOU-lead [here](https
 
 Week 6 (Nov 19, 2025): Research design and methodology
 
-Week 7 (Nov 26, 2025): Machine learning
+Week 7 (Nov 26, 2025): Machine learning, AI, and LLMs
 
 Week 8 (Dec 3, 2025): Relational database
 
 Week 9 (Dec 10, 2025): Power BI
 
-Week 10 (Dec 17, 2025): Traffic flow simulation (guest seminar)
+Week 10 (Dec 17, 2025): Traffic flow simulation ([Dr.-Ing. Wei Jiang](https://www.linkedin.com/in/wei-jiang-52083a32/))
 
 Week 11 (Jan 14, 2026): R basics
 
-Week 12 (Jan 21, 2026): YOU-lead session
+Week 12 (Jan 21, 2026): YOU-lead session: Data visualization (Rachid), Machine learning (Diego)
 
-Week 13 (Jan 28, 2026): YOU-lead session
+Week 13 (Jan 28, 2026): YOU-lead session: `SUMO`/`TraCI`(Morteza), TBD (Imen)
 
-Week 14 (Feb 4, 2026): YOU-lead session
+Week 14 (Feb 4, 2026): YOU-lead session: TBD (Ole)
 
 Week 15 (Feb 11, 2026): Working on your proposal
 
-## Q&A
+## FAQs
 
 **How to pronounce ASTRAI?**
 
