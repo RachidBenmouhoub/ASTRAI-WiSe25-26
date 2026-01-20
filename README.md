@@ -58,7 +58,7 @@ Week 3 (Oct 29, 2025): Web scraping
 
 Week 4 (Nov 5, 2025): Data wrangling
 
-Week 5 (Nov 12, 2025): Open-source tools, **signing up for YOU-lead [here](https://docs.google.com/spreadsheets/d/1b7E_YByKNdF-94kkDpLYdOrySi7-9n-Jg2X715zdUkc/edit?usp=sharing)**
+Week 5 (Nov 12, 2025): Open-source tools, signing up for YOU-lead
 
 Week 6 (Nov 19, 2025): Research design and methodology
 
@@ -79,6 +79,10 @@ Week 13 (Jan 28, 2026): YOU-lead session: `SUMO`/`TraCI`(Morteza), TBD (Imen)
 Week 14 (Feb 4, 2026): YOU-lead session: TBD (Ole)
 
 Week 15 (Feb 11, 2026): Working on your proposal
+
+## Course evaluation
+
+Please take a moment to complete the [HDA course evaluation](https://evaluation.tu-darmstadt.de/evasys/online.php?pswd=AZ3ZA). It really helps us understand what is working and what we can improve for future classes. Your feedback is anonymous and genuinely appreciated.
 
 ## FAQs
 
