@@ -76,7 +76,7 @@ Week 12 (Jan 21, 2026): YOU-lead session: Data visualization (Rachid), Machine l
 
 Week 13 (Jan 28, 2026): YOU-lead session: `SUMO`/`TraCI`(Morteza), TBD (Imen)
 
-Week 14 (Feb 4, 2026): YOU-lead session: TBD (Ole)
+Week 14 (Feb 4, 2026): YOU-lead session: mapping urban accessibility using isochrones and R (Ole)
 
 Week 15 (Feb 11, 2026): Working on your proposal
 
