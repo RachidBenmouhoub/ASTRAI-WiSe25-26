@@ -74,7 +74,7 @@ Week 11 (Jan 14, 2026): R basics
 
 Week 12 (Jan 21, 2026): YOU-lead session: Data visualization (Rachid), Machine learning (Diego)
 
-Week 13 (Jan 28, 2026): YOU-lead session: `SUMO`/`TraCI`(Morteza), TBD (Imen)
+Week 13 (Jan 28, 2026): YOU-lead session: `SUMO`/`TraCI`(Morteza), Data validation (Imen)
 
 Week 14 (Feb 4, 2026): YOU-lead session: mapping urban accessibility using isochrones and R (Ole)
 
