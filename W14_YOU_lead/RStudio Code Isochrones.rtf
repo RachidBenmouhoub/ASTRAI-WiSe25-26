@@ -1,0 +1,138 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww17940\viewh12760\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 # 1. INSTALL AND LOAD NECESSARY PACKETS:\
+\
+install.packages(c("osrm", "leaflet", "sf"))\
+library(osrm)    # open source routing machine\
+library(leaflet) # for the interactive map\
+library(sf)      # for processing geodata used in interactive map\
+\
+# 2. DEFINE THE STARTING POINT (here: Luisenplatz, Darmstadt)\
+# Format: c(longitude, latitude)\
+start_point <- c(8.651341, 49.872384) #coordinates for Luisenplatz\
+\
+# 3. CALCULATING THE ISOCHRONES\
+# We want "rings" for 5, 10 and 15 minutes of walking (traveltype = "foot")\
+iso <- osrmIsochrone(loc = start_point, breaks = c(0, 5, 10, 15), osrm.profile = "foot")\
+\
+# 4. BUILDING THE INTERACTIVE MAP\
+\
+map <- leaflet(iso) %>%\
+  addTiles() %>%  # standard OpenStreetMap backround\
+  addPolygons(\
+    fillColor = ~rev(heat.colors(3)), # colors from yellow to red\
+    fillOpacity = 0.5, \
+    color = "white", \
+    weight = 1,\
+    label = ~paste(isomin, "-", isomax, "min") # time stamps information\
+  ) %>%\
+  addMarkers(lng = start_point[1], lat = start_point[2], popup = "Starting Point")\
+\
+# 5. SHOW MAP\
+map\
+\
+#############################\
+\
+#NOW LETS CHANGE THE TRAVELTYPE FROM "foot" to "bike"\
+\
+iso <- osrmIsochrone(loc = start_point, breaks = c(0, 5, 10, 15), osrm.profile = "bike")\
+#instead of "foot" we now use "bike"\
+\
+map <- leaflet(iso) %>%\
+  addTiles() %>%  \
+  addPolygons(\
+    fillColor = ~rev(heat.colors(3)), \
+    fillOpacity = 0.5, \
+    color = "white", \
+    weight = 1,\
+    label = ~paste(isomin, "-", isomax, "min") \
+  ) %>%\
+  addMarkers(lng = start_point[1], lat = start_point[2], popup = "Starting Point")\
+\
+map\
+\
+##########################\
+\
+#NOW LETS CHANGE THE TIME AND MAKE IT A SEQUENCE\
+# FROM 0 TO 60 MIN IN 5 MIN STEPS\
+\
+iso <- osrmIsochrone(\
+  loc = start_point, \
+  breaks = seq(0, 60, 5), \
+  osrm.profile = "bike")\
+\
+# TO IMPROVE THE VISUALISATION WE INTRODUCE A COLOR PALETTE\
+pal <- colorNumeric(palette = "YlOrRd",domain = iso$isomax)\
+\
+# CREATE MAP WITH THE NEW PALETTE AND ADDING A LEGEND\
+map <- leaflet(iso) %>%\
+  addTiles() %>% \
+  addPolygons(\
+    fillColor = ~pal(isomax),\
+    fillOpacity = 0.5, \
+    color = "white", \
+    weight = 1,\
+    label = ~paste(isomin, "-", isomax, "min")\
+  ) %>%\
+  addLegend(\
+    pal = pal, \
+    values = ~isomax, \
+    title = "Fahrzeit (Min)",\
+    position = "bottomright"\
+  ) %>%\
+  addMarkers(lng = start_point[1], lat = start_point[2])\
+\
+map\
+\
+#########################\
+\
+#LETS COMPARE THREE DIFFERENT LOCATIONS: HBF, TU STADTMITTE AND TU LICHTWIESE\
+\
+hubs <- data.frame(\
+  name = c("TU Lichtwiese", "TU Stadtmitte", "Hauptbahnhof"),\
+  lng  = c(8.682, 8.657, 8.630),\
+  lat  = c(49.862, 49.875, 49.873),\
+  color = c("green", "red", "blue")\
+)\
+\
+#CALCULATE ISOCHRONES FOR A 13 MIN BIKE RIDE\
+iso_list <- lapply(1:nrow(hubs), function(i) \{\
+  iso <- osrmIsochrone(\
+    loc = c(hubs$lng[i], hubs$lat[i]),\
+    breaks = c(0, 13),\
+    osrm.profile = "bike"\
+  )\
+  iso$hub_name <- hubs$name[i] \
+  return(iso)\
+\})\
+\
+#CREATE THE INTERACTIVE MAP\
+map <- leaflet() %>%\
+  addProviderTiles("CartoDB.Positron")\
+for(i in 1:length(iso_list)) \{\
+  map <- map %>%\
+    addPolygons(\
+      data = iso_list[[i]],\
+      fillColor = hubs$color[i],\
+      color = hubs$color[i],\
+      weight = 2,\
+      fillOpacity = 0.4,\
+      group = hubs$name[i],\
+      label = ~paste("13 min from:", hub_name)\
+    )\
+\}\
+\
+map <- map %>%\
+  addMarkers(data = hubs, lng = ~lng, lat = ~lat, popup = ~name) %>%\
+  addLayersControl(\
+    overlayGroups = hubs$name,\
+    options = layersControlOptions(collapsed = FALSE)\
+  )\
+\
+# SHOW THE MAP\
+map}
